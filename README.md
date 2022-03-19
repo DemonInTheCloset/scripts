@@ -105,7 +105,7 @@ articles.
 
 #### Usage
 
-Idealy set a
+Ideally set a
 [cron](https://wiki.archlinux.org/title/Cron)/[systemd](https://wiki.archlinux.org/title/Systemd/Timers)
 Timer to run this script automatically.
 
@@ -120,3 +120,22 @@ Exits with non zero return code if no new articles are found
 #### Files
 
 - `bin/newsboat-reload-notify`
+
+### Audio Notify
+
+Send a notification with the current volume status (muted/percent)
+
+#### Usage
+
+Ideally used with a keybinding to run:
+
+- `pamixer --increase 5 && audio-notify`
+- `pamixer --decrease 5 && audio-notify`
+- `pamixer --toggle-mute && audio-notify`
+
+If the volume of the default sink is 0 or it is muted, the notification will
+show the volume is muted, otherwise it will show a progress bar.
+
+#### Files
+
+- `bin/audio-notify`
