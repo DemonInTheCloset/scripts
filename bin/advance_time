@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+[ "$1" = "" ] && (
+	echo "Provide time to advance by"
+	false
+)
+
+END_DATE="$(date --date="$1" +'%Y-%m-%d %H:%M:%S')"
+echo "Advancing time to $END_DATE"
+timedatectl set-ntp false && timedatectl set-time "$END_DATE"

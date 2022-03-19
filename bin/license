@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+git config --get user.name >/dev/null || (
+	echo 'Not a git repo'
+	false
+)
+
+NAME=$(git config --get user.name)
+
+[ "$NAME" = "" ] && (
+	echo 'No name set (use git config user.name <NAME>)'
+	false
+)
+
+sed "s/<YEAR>/$(date +'%Y')/;s/<NAME>/$NAME/" \
+	"${LICENSE:-${XDG_CONFIG_HOME:-$HOME/.config}/license/LICENSE}"
