@@ -169,3 +169,19 @@ Ideally use with a keybinding to run:
 #### Files
 
 - `bin/brightness-notify`
+
+### DMenu Prompt
+
+Use dmenu to prompt the user for confirmation for an action.
+
+#### Usage
+
+Ideally bind to a key to run something like `dmenu-prompt 'Shutdown?' 'systemctl poweroff'`
+
+#### Dependencies
+
+- [`dmenu`](https://tools.suckless.org/dmenu/)
+
+#### Files
+
+- `bin/dmenu-prompt`
