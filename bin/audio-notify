@@ -1,0 +1,12 @@
+#!/bin/env sh
+
+volume="$(pamixer --get-volume)"
+muted="$(pamixer --get-mute)"
+
+if [ "$muted" = true ] || [ "$volume" -eq '0' ]; then
+	dunstify -a "changedVolume" -u low -i audio-volume-muted -h string:audio:volume \
+		"Volume Muted"
+else
+	dunstify -a "changedVolume" -u low -i audio-volume-high -h string:audio:volume \
+		-h int:value:"$volume" "Volume: $volume%"
+fi
