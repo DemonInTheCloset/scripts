@@ -115,6 +115,8 @@ Manually running it produces no output:
 $ newsboat-reload-notify
 ```
 
+Exits with non zero return code if no new articles are found
+
 #### Files
 
 - `bin/newsboat-reload-notify`
