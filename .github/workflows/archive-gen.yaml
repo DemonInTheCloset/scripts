@@ -1,0 +1,14 @@
+name: Generate Tar Archives
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Create-Tar-Archives:
+    runs-on: ubuntu-latest
+    steps:
+      - run: make
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Archives
+          path: *.tar.xz
