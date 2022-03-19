@@ -117,6 +117,11 @@ $ newsboat-reload-notify
 
 Exits with non zero return code if no new articles are found
 
+#### Dependencies
+
+- [`dunst`](https://github.com/dunst-project/dunst)
+- [`newsboat`](https://github.com/newsboat/newsboat)
+
 #### Files
 
 - `bin/newsboat-reload-notify`
@@ -136,6 +141,31 @@ Ideally used with a keybinding to run:
 If the volume of the default sink is 0 or it is muted, the notification will
 show the volume is muted, otherwise it will show a progress bar.
 
+#### Dependencies
+
+- [`dunst`](https://github.com/dunst-project/dunst)
+- [`pamixer`](https://github.com/cdemoulins/pamixer)
+
 #### Files
 
 - `bin/audio-notify`
+
+### Brightness Notify
+
+Send a notification with the current brightness of the display.
+
+#### Usage
+
+Ideally use with a keybinding to run:
+
+- `xbacklight -perceived -inc 5 && brightness-notify`
+- `xbacklight -perceived -dec 5 && brightness-notify`
+
+#### Dependencies
+
+- [`dunst`](https://github.com/dunst-project/dunst)
+- [`acpilight`](https://gitlab.com/wavexx/acpilight)
+
+#### Files
+
+- `bin/brightness-notify`
