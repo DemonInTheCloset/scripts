@@ -1,0 +1,17 @@
+name: Generate Tar Archives and Create Release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Create-Tar-Archives:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Archive
+        run: make
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "*.tar.xz"
