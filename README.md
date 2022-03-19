@@ -97,3 +97,24 @@ Advancing time to 2022-03-22 16:54:45
 #### Files
 
 - `bin/advance_time`
+
+### Newsboat Reload Notify
+
+Reload newsboat urls and use dunst to send a notification if there are any new
+articles.
+
+#### Usage
+
+Idealy set a
+[cron](https://wiki.archlinux.org/title/Cron)/[systemd](https://wiki.archlinux.org/title/Systemd/Timers)
+Timer to run this script automatically.
+
+Manually running it produces no output:
+
+```console
+$ newsboat-reload-notify
+```
+
+#### Files
+
+- `bin/newsboat-reload-notify`
