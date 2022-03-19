@@ -90,9 +90,8 @@ Using systemd's `timedatectl` disable ntp and set the date to something else
 #### Usage
 
 ```console
-2022-03-19# advance_time '3 day'
+$ advance_time '3 day'
 Advancing time to 2022-03-22 16:54:45
-2022-03-22#
 ```
 
 #### Files
