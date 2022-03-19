@@ -1,0 +1,6 @@
+#!/bin/env sh
+
+brightness="$(xbacklight -perceived -get)"
+
+dunstify -a "changedBrightness" -u low -i brightnesssettings \
+	-h string:display:brightness -h int:value:"$brightness" "Brightness: $brightness%"
