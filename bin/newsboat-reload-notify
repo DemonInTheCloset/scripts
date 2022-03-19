@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+newsboat -x reload
+UNREAD=$(newsboat -x print-unread | sed 's/ unread.*//')
+
+[ "$UNREAD" -ne 0 ] && dunsttify -a 'rssNewArticles' -u low -i rss \
+	-h string:rss:new-article "$UNREAD unread articles"
