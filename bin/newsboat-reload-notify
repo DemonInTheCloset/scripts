@@ -6,5 +6,5 @@ UNREAD=$(newsboat -x print-unread | sed 's/ unread.*//')
 newsboat -x reload
 NEW=$(newsboat -x print-unread | sed 's/ unread.*//')
 
-[ "$UNREAD" -lt "$NEW" ] && dunsttify -a 'rssNewArticles' -u low -i rss \
+[ "$UNREAD" -lt "$NEW" ] && dunstify -a 'rssNewArticles' -u low -i RSS_feeds \
 	-h string:rss:new-article "$NEW unread articles"
