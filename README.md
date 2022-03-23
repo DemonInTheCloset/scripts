@@ -185,3 +185,24 @@ Ideally bind to a key to run something like `dmenu-prompt 'Shutdown?' 'systemctl
 #### Files
 
 - `bin/dmenu-prompt`
+
+### Smart Pinentry
+
+Switch between ncurses and gtk Pinentry based on an environment variable.
+
+#### Usage
+
+Set `PINENTRY_USER_DATA` to `none` to deny Pinentry (ie. in `$ZDOTDIR/.zshenv`).
+Override it to `gtk` if you know you are in a graphical environment (ie. in
+`$ZDOTDIR/.zprofile` before launching the X server (xinit/startx)), and set it
+to `curses` if you are in an interactive shell (ie. in `$ZDOTDIR/.zshrc`).
+
+If `PINENTRY_USER_DATA` isn't set it will default to launching through `gtk`.
+
+#### Dependencies
+
+- [`pinentry`](https://gnupg.org/related_software/pinentry/)
+
+#### Files
+
+- `bin/smart-pinentry`
