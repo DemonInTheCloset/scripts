@@ -7,4 +7,4 @@ newsboat -x reload
 NEW=$(newsboat -x print-unread | sed 's/ unread.*//')
 
 [ "$UNREAD" -lt "$NEW" ] && dunstify -a 'rssNewArticles' -t 0 -u low -i RSS_feeds \
-	-h string:rss:new-article "$NEW unread articles"
+	-h string:x-dunst-stack-tag:rss-new "$NEW unread articles"
