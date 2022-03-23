@@ -2,9 +2,12 @@
 
 set -e
 
-UNREAD=$(newsboat -x print-unread | sed 's/ unread.*//')
-newsboat -x reload
+UNREAD=$(newsboat -x print-unread | sed 's/ unread.*//') newsboat -x reload
 NEW=$(newsboat -x print-unread | sed 's/ unread.*//')
 
-[ "$UNREAD" -lt "$NEW" ] && dunstify -a 'rssNewArticles' -t 0 -u low -i RSS_feeds \
-	-h string:x-dunst-stack-tag:rss-new "$NEW unread articles"
+[ "$UNREAD" -lt "$NEW" ]
+
+ACTION=$(dunstify -a 'rssNewArticles' -t 0 -u low -i RSS_feeds -h
+string:x-dunst-stack-tag:rss-new "$NEW unread articles")
+
+case "$ACTION" in 'default') kitty newsboat ;; '*') ;; esac
