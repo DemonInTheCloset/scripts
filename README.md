@@ -206,3 +206,23 @@ If `PINENTRY_USER_DATA` isn't set it will default to launching through `gtk`.
 #### Files
 
 - `bin/smart-pinentry`
+
+### Select Sink/Source
+
+DMenu based default pulseaudio source/sink selection.
+
+#### Usage
+
+Bind launching the scripts to a keybinding and you will be prompted by dmenu to
+select a default source/sink.
+
+#### Dependencies
+
+- [`dmenu`](https://tools.suckless.org/dmenu/)
+- [`pactl`](https://www.freedesktop.org/wiki/Software/PulseAudio/)
+- [`pamixer`](https://github.com/cdemoulins/pamixer)
+
+#### Files
+
+- `bin/select-source`
+- `bin/select-sink`
