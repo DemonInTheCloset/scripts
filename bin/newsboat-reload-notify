@@ -2,7 +2,8 @@
 
 set -e
 
-UNREAD=$(newsboat -x print-unread | sed 's/ unread.*//') newsboat -x reload
+UNREAD=$(newsboat -x print-unread | sed 's/ unread.*//')
+newsboat -x reload
 NEW=$(newsboat -x print-unread | sed 's/ unread.*//')
 
 [ "$UNREAD" -lt "$NEW" ]
