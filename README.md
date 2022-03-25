@@ -210,3 +210,18 @@ select a default source/sink.
 
 - `bin/select-source`
 - `bin/select-sink`
+
+### Auto Clicker/Kill Auto Clicker
+
+Scripts to launch and kill an autoclicker, useful for clicker games.
+
+#### Usage
+
+Bind a key to `auto_clicker` and another to `kill_auto_clicker`, that way you
+can start and stop the clicker, make sure you test the keybindings work properly
+before using them as it might be hard to stop the clicker otherwise.
+
+#### Dependencies
+
+- [`xdotool`](https://www.semicomplete.com/projects/xdotool/)
+- [`pgrep`](https://gitlab.com/procps-ng/procps) _should come preinstalled_
