@@ -1,6 +1,6 @@
 .PHONY: all clean install uninstall test
 
-XDG_CONFIG_HOME=~/.config
+XDG_DATA_HOME=~/.local/share/
 INSTALLDIR=~/.local/bin/
 
 all: scripts.tar.xz config.tar.xz
@@ -15,8 +15,8 @@ clean:
 	rm -f *.tar.xz
 
 install:
-	mkdir -vp $(XDG_CONFIG_HOME)
-	cp -vr config/* $(XDG_CONFIG_HOME)
+	mkdir -vp $(XDG_DATA_HOME)/scripts
+	cp -vr config/* $(XDG_DATA_HOME)/scripts
 	mkdir -vp $(INSTALLDIR)
 	cp -vr bin/* $(INSTALLDIR)
 

@@ -15,4 +15,4 @@ NAME=$(git config --get user.name)
 )
 
 sed "s/<YEAR>/$(date +'%Y')/;s/<NAME>/$NAME/" \
-	"${LICENSE:-${XDG_CONFIG_HOME:-$HOME/.config}/license/LICENSE}"
+	"${LICENSE:-${XDG_DATA_HOME:-$HOME/.local/share}/scripts/license/LICENSE}"

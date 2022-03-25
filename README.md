@@ -14,11 +14,11 @@ is in your `$PATH`.
 
 To uninstall you **need** the **whole repository**, so download it and go into
 the folder, then run `make uninstall`, this won't purge the things in the
-`$XDG_CONFIG_HOME` to preserve your changes, you will need to remove those
+`$XDG_DATA_HOME/scripts` to preserve your changes, you will need to remove those
 manually.
 
 Look into `config` to see which files will be created by `make install` into the
-`$XDG_CONFIG_HOME` directory.
+`$XDG_DATA_HOME/scripts` directory.
 
 ## Documentation
 
@@ -29,11 +29,11 @@ How to manually install the scripts:
 3. Download the required files.
 4. Depending on the parent folder move the files to:
    - `bin`: `~/.local/bin/`
-   - `config`: `$XDG_CONFIG_HOME` (`~/.config/` by default)
+   - `config`: `$XDG_DATA_HOME/scripts` (`~/.local/share/scripts/` by default)
 
 **Remember to respect the folder structure**: ie. `config/license/LICENSE` goes
-to `$XDG_CONFIG_HOME/license/LICENSE` (`~/.config/license/LICENSE` by default),
-not to `$XDG_CONFIG_HOME/LICENSE`
+to `$XDG_DATA_HOME/scripts/license/LICENSE` (`~/.local/share/scripts/license/LICENSE` by default),
+not to `$XDG_DATA_HOME/scripts/LICENSE`
 
 ### License
 
@@ -72,7 +72,7 @@ You can directly pipe the output to a file `license > LICENSE.txt`
 
 If you don't want to use the default MIT license then simply overwrite the file
 `config/license/LICENSE` before installing, or
-`$XDG_CONFIG_HOME/license/LICENSE` after installing.
+`$XDG_DATA_HOME/scripts/license/LICENSE` after installing.
 
 The script will automatically replace the text `<YEAR>` with the current year
 and `<NAME>` with your git user name.
