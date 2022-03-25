@@ -3,20 +3,20 @@
 XDG_DATA_HOME=~/.local/share/
 INSTALLDIR=~/.local/bin/
 
-all: scripts.tar.xz config.tar.xz
+all: scripts.tar.xz data.tar.xz
 
 scripts.tar.xz: $(wildcard bin/*)
 	(cd bin; tar --create --xz -vv --file=../$@ *)
 
-config.tar.xz: $(wildcard config/*)
-	(cd config; tar --create --xz -vv --file=../$@ *)
+data.tar.xz: $(wildcard data/*)
+	(cd data; tar --create --xz -vv --file=../$@ *)
 
 clean:
 	rm -f *.tar.xz
 
 install:
 	mkdir -vp $(XDG_DATA_HOME)/scripts
-	cp -vr config/* $(XDG_DATA_HOME)/scripts
+	cp -vr data/* $(XDG_DATA_HOME)/scripts
 	mkdir -vp $(INSTALLDIR)
 	cp -vr bin/* $(INSTALLDIR)
 
