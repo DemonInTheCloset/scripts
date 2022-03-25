@@ -10,4 +10,9 @@ NEW=$(newsboat -x print-unread | sed 's/ unread.*//')
 
 ACTION=$(dunstify -a 'rssNewArticles' -t 0 -u low -i RSS_feeds -h string:x-dunst-stack-tag:rss-new "$NEW unread articles")
 
-case "$ACTION" in 'default') kitty newsboat ;; '*') ;; esac
+case "$ACTION" in
+'default')
+	kitty newsboat
+	;;
+'*') ;;
+esac
