@@ -82,22 +82,6 @@ and `<NAME>` with your git user name.
 - `bin/license`: License script
 - `config/license/LICENSE`: default MIT license
 
-### Advance Time
-
-Using systemd's `timedatectl` disable ntp and set the date to something else
-(useful for clicker games)
-
-#### Usage
-
-```console
-# advance_time '3 day'
-Advancing time to 2022-03-22 16:54:45
-```
-
-#### Files
-
-- `bin/advance_time`
-
 ### Newsboat Reload Notify
 
 Reload newsboat urls and use dunst to send a notification if there are any new
