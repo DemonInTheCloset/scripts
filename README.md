@@ -225,3 +225,34 @@ before using them as it might be hard to stop the clicker otherwise.
 
 - [`xdotool`](https://www.semicomplete.com/projects/xdotool/)
 - [`pgrep`](https://gitlab.com/procps-ng/procps) _should come preinstalled_
+
+### Wakatime Query
+
+Query your mail to get project statisctics from [Wakatime](https://wakatime.com/)
+
+#### Usage
+
+Run `wakatime-query 'myproject'` and you'll get the time worked on it each week
+in descending order (latest week first)
+
+```cmd
+$ wakatime-query scripts
+1 hr 4 mins
+2 hrs 53 mins
+15 mins
+0 secs
+```
+
+**Warning:** It uses the name of the parent folder, not of the GitHub project,
+ie. My [dotfiles](https://github.com/DemonInTheCloset/dotfiles/) are managed by
+chezmoi so they are under `~/.local/share/chezmoi/` and thus I have to use
+`wakatime-query chezmoi` to get the time I've worked on it.
+
+#### Dependencies
+
+- [notmuch](https://notmuchmail.org/)
+- [xargs](https://www.gnu.org/software/findutils/) _should come preinstalled_
+
+#### Files
+
+- `bin/wakatime-query`
