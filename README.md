@@ -226,6 +226,11 @@ before using them as it might be hard to stop the clicker otherwise.
 - [`xdotool`](https://www.semicomplete.com/projects/xdotool/)
 - [`pgrep`](https://gitlab.com/procps-ng/procps) _should come preinstalled_
 
+#### Files
+
+- `bin/auto_clicker`
+- `bin/kill_auto_clicker`
+
 ### Wakatime Query
 
 Query your mail to get project statisctics from [Wakatime](https://wakatime.com/)
