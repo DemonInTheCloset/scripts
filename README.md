@@ -255,9 +255,28 @@ chezmoi so they are under `~/.local/share/chezmoi/` and thus I have to use
 
 #### Dependencies
 
-- [notmuch](https://notmuchmail.org/)
-- [xargs](https://www.gnu.org/software/findutils/) _should come preinstalled_
+- [`notmuch`](https://notmuchmail.org/)
+- [`xargs`](https://www.gnu.org/software/findutils/) _should come preinstalled_
 
 #### Files
 
 - `bin/wakatime-query`
+
+### Notmuch Notify
+
+Index your mailbox and send a notification if new mail is found.
+
+#### Usage
+
+Set up a cronjob or use a program like [goimapnotify](https://gitlab.com/shackra/goimapnotify)
+to run this script after fetching your mail (ie. with `mbsync` or a `notmuch`
+pre-new hook).
+
+#### Dependencies
+
+- [`notmuch`](https://notmuchmail.org/)
+- [`dunst`](https://github.com/dunst-project/dunst)
+
+#### Files
+
+- `bin/notmuchnotify`
