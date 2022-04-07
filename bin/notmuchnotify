@@ -1,0 +1,8 @@
+#!/bin/sh
+
+NEW_MAIL="$(notmuch new | sed -n 's/^Added \(\S\+\).*$/\1/p')"
+
+if [ "$NEW_MAIL" ]; then
+	PLURAL="$([ "$NEW_MAIL" -ge 2 ] && echo 's')"
+	dunstify -a 'mail' -u low -i mutt -h string:x-dunst-stack-tag:mail-new "Recieved $NEW_MAIL new message$PLURAL"
+fi
