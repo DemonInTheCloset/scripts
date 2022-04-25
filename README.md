@@ -31,7 +31,7 @@ How to manually install the scripts:
    - `bin`: `~/.local/bin/`
    - `data`: `$XDG_DATA_HOME/scripts` (`~/.local/share/scripts/` by default)
 
-**Remember to respect the folder structure**: ie. `data/license/LICENSE` goes
+**Remember to respect the folder structure**: ie. [`data/license/LICENSE`](data/license/LICENSE) goes
 to `$XDG_DATA_HOME/scripts/license/LICENSE` (`~/.local/share/scripts/license/LICENSE` by default),
 not to `$XDG_DATA_HOME/scripts/LICENSE`
 
@@ -71,7 +71,7 @@ You can directly pipe the output to a file `license > LICENSE.txt`
 ##### Custom License
 
 If you don't want to use the default MIT license then simply overwrite the file
-`data/license/LICENSE` before installing, or
+[`data/license/LICENSE`](data/license/LICENSE) before installing, or
 `$XDG_DATA_HOME/scripts/license/LICENSE` after installing.
 
 The script will automatically replace the text `<YEAR>` with the current year
@@ -79,8 +79,8 @@ and `<NAME>` with your git user name.
 
 #### Files
 
-- `bin/license`: License script
-- `data/license/LICENSE`: default MIT license
+- [`bin/license`](bin/license): License script
+- [`data/license/LICENSE`](data/license/LICENSE): default MIT license
 
 ### Newsboat Reload Notify
 
@@ -108,7 +108,7 @@ Exits with non zero return code if no new articles are found
 
 #### Files
 
-- `bin/newsboat-reload-notify`
+- [`bin/newsboat-reload-notify`](bin/newsboat-reload-notify)
 
 ### Audio Notify
 
@@ -132,7 +132,7 @@ show the volume is muted, otherwise it will show a progress bar.
 
 #### Files
 
-- `bin/audio-notify`
+- [`bin/audio-notify`](bin/audio-notify)
 
 ### Brightness Notify
 
@@ -152,7 +152,7 @@ Ideally use with a keybinding to run:
 
 #### Files
 
-- `bin/brightness-notify`
+- [`bin/brightness-notify`](bin/brightness-notify)
 
 ### DMenu Prompt
 
@@ -168,7 +168,7 @@ Ideally bind to a key to run something like `dmenu-prompt 'Shutdown?' 'systemctl
 
 #### Files
 
-- `bin/dmenu-prompt`
+- [`bin/dmenu-prompt`](bin/dmenu-prompt)
 
 ### Smart Pinentry
 
@@ -189,7 +189,7 @@ If `PINENTRY_USER_DATA` isn't set it will default to launching through `gtk`.
 
 #### Files
 
-- `bin/smart-pinentry`
+- [`bin/smart-pinentry`](bin/smart-pinentry)
 
 ### Select Sink/Source
 
@@ -208,8 +208,8 @@ select a default source/sink.
 
 #### Files
 
-- `bin/select-source`
-- `bin/select-sink`
+- [`bin/select-source`](bin/select-source)
+- [`bin/select-sink`](bin/select-sink)
 
 ### Auto Clicker/Kill Auto Clicker
 
@@ -228,8 +228,8 @@ before using them as it might be hard to stop the clicker otherwise.
 
 #### Files
 
-- `bin/auto_clicker`
-- `bin/kill_auto_clicker`
+- [`bin/auto_clicker`](bin/auto_clicker)
+- [`bin/kill_auto_clicker`](bin/kill_auto_clicker)
 
 ### Wakatime Query
 
@@ -260,7 +260,7 @@ chezmoi so they are under `~/.local/share/chezmoi/` and thus I have to use
 
 #### Files
 
-- `bin/wakatime-query`
+- [`bin/wakatime-query`](bin/wakatime-query)
 
 ### Notmuch Notify
 
@@ -279,4 +279,20 @@ pre-new hook).
 
 #### Files
 
-- `bin/notmuchnotify`
+- [`bin/notmuchnotify`](bin/notmuchnotify)
+
+### Dunst Toggle
+
+Toggle pause state of dunst notifications.
+
+#### Usage
+
+Set up a keybinding to toggle the notifications.
+
+#### Dependencies
+
+- [`dunst`](https://github.com/dunst-project/dunst)
+
+#### Files
+
+- [`bin/dunst-toggle`](bin/dunst-toggle)
