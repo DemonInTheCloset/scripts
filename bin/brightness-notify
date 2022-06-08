@@ -1,6 +1,16 @@
-#!/bin/env sh
+#!/bin/sh
+
+app='changedBrightness'
+icon='brightnesssettings'
+
+BASEDIR="$(dirname "$0")"
+. "$BASEDIR/cache_file.sh"
+
+msgid_file="$(cache_file "$app.msgid")"
+[ -f "$msgid_file" ] && msgid="$(cat "$msgid_file")"
+
+msgid="${msgid:-0}"
 
 brightness="$(xbacklight -perceived -get)"
 
-dunstify -a "changedBrightness" -u low -i brightnesssettings \
-	-h string:x-dunst-stack-tag:brightness -h int:value:"$brightness" "Brightness: $brightness%"
+notify-send -pu low -r "$msgid" -a "$app" -i "$icon" -h int:value:"$brightness" "Brightness: $brightness%" >"$msgid_file"

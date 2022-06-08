@@ -1,10 +1,21 @@
-#!/bin/env sh
+#!/bin/sh
+
+app='volumeChanged'
+icon='audio-volume-muted'
+
+BASEDIR="$(dirname "$0")"
+. "$BASEDIR/cache_file.sh"
+
+msgid_file="$(cache_file "$app.msgid")"
+[ -f "$msgid_file" ] && msgid="$(cat "$msgid_file")"
+
+msgid="${msgid:-0}"
 
 volume="$(pamixer --get-volume)"
 muted="$(pamixer --get-mute)"
 
 if [ "$muted" = true ] || [ "$volume" -eq '0' ]; then
-	dunstify -a "changedVolume" -u low -i audio-volume-muted -h string:x-dunst-stack-tag:volume "Volume Muted"
+	notify-send -pu low -r "$msgid" -a "$app" -i "$icon" "Volume Muted" >"$msgid_file"
 else
-	dunstify -a "changedVolume" -u low -i audio-volume-high -h string:x-dunst-stack-tag:volume -h int:value:"$volume" "Volume: $volume%"
+	notify-send -pu low -r "$msgid" -a "$app" -i "$icon" -h "int:value:$volume" "Volume: $volume%" >"$msgid_file"
 fi
