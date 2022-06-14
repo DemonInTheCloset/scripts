@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sink=$(pamixer --list-sinks | tail -n +2 - | sed 's/^.* "\(\S*\)"$/\1/' | dmenu -p 'Select Sink:')
+sink=$(pamixer --list-sinks | tail -n +2 - | sed 's/^.* "\(.*\)"$/\1/' | dmenu -p 'Select Sink:')
 name=$(pamixer --list-sinks | tail -n +2 - | grep "$sink" | sed 's/^\S* "\(\S*\)" .*$/\1/')
 
 [ "$name" ] && pactl set-default-sink "$name"
