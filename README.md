@@ -154,7 +154,7 @@ Ideally use with a keybinding to run:
 
 - [`bin/brightness-notify`](bin/brightness-notify)
 
-### DMenu Prompt
+### DMenu Prompt & DMenu Confirm
 
 Use dmenu to prompt the user for confirmation for an action.
 
@@ -169,6 +169,7 @@ Ideally bind to a key to run something like `dmenu-prompt 'Shutdown?' 'systemctl
 #### Files
 
 - [`bin/dmenu-prompt`](bin/dmenu-prompt)
+- [`bin/dmenu-confirm`](bin/dmenu-prompt)
 
 ### Smart Pinentry
 
