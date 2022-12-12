@@ -2,6 +2,17 @@
 
 set -e
 
+app='newsboat'
+icon='RSS_feeds'
+
+BASEDIR="$(dirname "$0")"
+. "$BASEDIR/cache_file.sh"
+
+msgid_file="$(cache_file "$app.msgid")"
+[ -f "$msgid_file" ] && msgid="$(cat "$msgid_file")"
+
+msgid="${msgid:-0}"
+
 UNREAD=$(newsboat -x print-unread | sed 's/ unread.*//')
 newsboat -x reload
 NEW=$(newsboat -x print-unread | sed 's/ unread.*//')
@@ -9,16 +20,9 @@ NEW=$(newsboat -x print-unread | sed 's/ unread.*//')
 [ "$UNREAD" -lt "$NEW" ]
 
 if [ "$NEW" -eq 1 ]; then
-	S=''
+    S=''
 else
-	S='s'
+    S='s'
 fi
 
-ACTION=$(dunstify -a 'rssNewArticles' -t 0 -u low -i RSS_feeds -h string:x-dunst-stack-tag:rss-new "$NEW unread article$S")
-
-case "$ACTION" in
-'default')
-	kitty newsboat
-	;;
-'*') ;;
-esac
+notify-send -pu low -r "$msgid" -a "$app" -i "$icon" "$NEW unread article$S" >"$msgid_file"

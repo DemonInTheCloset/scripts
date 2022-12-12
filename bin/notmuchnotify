@@ -1,8 +1,19 @@
 #!/bin/sh
 
+app='mail'
+icon='mutt'
+
+BASEDIR="$(dirname "$0")"
+. "$BASEDIR/cache_file.sh"
+
+msgid_file="$(cache_file "$app.msgid")"
+[ -f "$msgid_file" ] && msgid="$(cat "$msgid_file")"
+
+msgid="${msgid:-0}"
+
 NEW_MAIL="$(notmuch new | sed -n 's/^Added \(\S\+\).*$/\1/p')"
 
 if [ "$NEW_MAIL" ]; then
-	PLURAL="$([ "$NEW_MAIL" -ge 2 ] && echo 's')"
-	dunstify -a 'mail' -u low -t 90000 -i mutt -h string:x-dunst-stack-tag:mail-new "Recieved $NEW_MAIL new message$PLURAL"
+    PLURAL="$([ "$NEW_MAIL" -ge 2 ] && echo 's')"
+    notify-send -pu low -r "$msgid" -a "$app" -i "$icon" "Recieved $NEW_MAIL new message$PLURAL" >"$msgid_file"
 fi

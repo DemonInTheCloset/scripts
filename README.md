@@ -84,7 +84,7 @@ and `<NAME>` with your git user name.
 
 ### Newsboat Reload Notify
 
-Reload newsboat urls and use dunst to send a notification if there are any new
+Reload newsboat urls and use send a notification if there are any new
 articles.
 
 #### Usage
@@ -103,7 +103,7 @@ Exits with non zero return code if no new articles are found
 
 #### Dependencies
 
-- [`dunst`](https://github.com/dunst-project/dunst)
+- `notify-send`
 - [`newsboat`](https://github.com/newsboat/newsboat)
 
 #### Files
@@ -127,7 +127,7 @@ show the volume is muted, otherwise it will show a progress bar.
 
 #### Dependencies
 
-- [`dunst`](https://github.com/dunst-project/dunst)
+- `notify-send`
 - [`pamixer`](https://github.com/cdemoulins/pamixer)
 
 #### Files
@@ -147,7 +147,7 @@ Ideally use with a keybinding to run:
 
 #### Dependencies
 
-- [`dunst`](https://github.com/dunst-project/dunst)
+- `notify-send`
 - [`acpilight`](https://gitlab.com/wavexx/acpilight)
 
 #### Files
@@ -275,8 +275,8 @@ pre-new hook).
 
 #### Dependencies
 
+- `notify-send`
 - [`notmuch`](https://notmuchmail.org/)
-- [`dunst`](https://github.com/dunst-project/dunst)
 
 #### Files
 
