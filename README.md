@@ -192,9 +192,9 @@ If `PINENTRY_USER_DATA` isn't set it will default to launching through `gtk`.
 
 - [`bin/smart-pinentry`](bin/smart-pinentry)
 
-### Select Sink/Source
+### Select Sink/Source and Default Audio
 
-DMenu based default pulseaudio source/sink selection.
+DMenu based default pipewire audio source/sink selection.
 
 #### Usage
 
@@ -204,13 +204,14 @@ select a default source/sink.
 #### Dependencies
 
 - [`dmenu`](https://tools.suckless.org/dmenu/)
-- [`pactl`](https://www.freedesktop.org/wiki/Software/PulseAudio/)
-- [`pamixer`](https://github.com/cdemoulins/pamixer)
+- [`python`](https://www.python.org/)
+- [`wireplumber`](https://pipewire.pages.freedesktop.org/wireplumber/)
 
 #### Files
 
 - [`bin/select-source`](bin/select-source)
 - [`bin/select-sink`](bin/select-sink)
+- [`bin/default-audio`](bin/default-audio)
 
 ### Auto Clicker/Kill Auto Clicker
 
