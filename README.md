@@ -118,9 +118,9 @@ Send a notification with the current volume status (muted/percent)
 
 Ideally used with a keybinding to run:
 
-- `pamixer --increase 5 && audio-notify`
-- `pamixer --decrease 5 && audio-notify`
-- `pamixer --toggle-mute && audio-notify`
+- `wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && audio-notify`
+- `wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && audio-notify`
+- `wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && audio-notify`
 
 If the volume of the default sink is 0 or it is muted, the notification will
 show the volume is muted, otherwise it will show a progress bar.
@@ -128,7 +128,7 @@ show the volume is muted, otherwise it will show a progress bar.
 #### Dependencies
 
 - `notify-send`
-- [`pamixer`](https://github.com/cdemoulins/pamixer)
+- [`wireplumber`](https://pipewire.pages.freedesktop.org/wireplumber/)
 
 #### Files
 
